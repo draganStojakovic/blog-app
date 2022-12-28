@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 import { AppPostsPage } from "./pages/AppPostsPage";
+import { AppPostDetailsPage } from "./pages/AppPostDetailsPage";
 
 function App() {
   return (
@@ -19,8 +20,11 @@ function App() {
               return <Redirect to="/posts" />;
             }}
           />
-          <Route path="/posts">
+          <Route exact path="/posts">
             <AppPostsPage />
+          </Route>
+          <Route path="/posts/:id">
+            <AppPostDetailsPage />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -13,7 +13,7 @@ export const AppPostsPage = () => {
   useEffect(() => {
     handleGetPosts();
   }, []);
-  
+
   return (
     <div>
       <AppPostsList data={posts} />
