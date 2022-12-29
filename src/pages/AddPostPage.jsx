@@ -21,6 +21,11 @@ export const AddPostPage = () => {
   };
 
   return (
-    <AddPostForm post={post} onChange={setPost} handlePost={handleAddPost} />
+    <AddPostForm
+      post={post}
+      onChange={setPost}
+      handlePost={handleAddPost}
+      isCreateMode={true}
+    />
   );
 };

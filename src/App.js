@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 import { AppPostsPage } from "./pages/AppPostsPage";
 import { AppPostDetailsPage } from "./pages/AppPostDetailsPage";
 import { AddPostPage } from "./pages/AddPostPage";
+import { EditPostPage } from "./pages/EditPostPage";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/add">
             <AddPostPage />
+          </Route>
+          <Route path="/edit/:id">
+            <EditPostPage />
           </Route>
         </Switch>
       </BrowserRouter>

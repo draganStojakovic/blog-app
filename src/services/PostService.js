@@ -10,6 +10,9 @@ class PostService extends ApiService {
   async add(post) {
     await this.client.post("/posts", post);
   }
+  async edit(id, post) {
+    await this.client.put(`/posts/${id}`, post);
+  }
 }
 
 export const postService = new PostService();

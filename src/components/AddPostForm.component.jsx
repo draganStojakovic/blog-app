@@ -1,7 +1,7 @@
-export const AddPostForm = ({ post, handlePost, onChange }) => {
+export const AddPostForm = ({ post, handlePost, onChange, isCreateMode }) => {
   return (
     <div>
-      <h1>Submit a post</h1>
+      <h1>{isCreateMode ? "Submit a post" : "Edit Post"}</h1>
       <form onSubmit={handlePost}>
         <label htmlFor="title">Title:</label>
         <input
@@ -24,7 +24,7 @@ export const AddPostForm = ({ post, handlePost, onChange }) => {
           onChange={(e) => onChange({ ...post, text: e.target.value })}
         />
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">{isCreateMode ? "Submit" : "Edit"}</button>
       </form>
       <button
         onClick={() =>
@@ -33,7 +33,9 @@ export const AddPostForm = ({ post, handlePost, onChange }) => {
             text: "",
           })
         }
-      >Reset</button>
+      >
+        Reset
+      </button>
     </div>
   );
 };
