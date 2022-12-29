@@ -9,6 +9,7 @@ export const AppPostsList = ({ data, handleEditPost, handleDeletePost }) => {
             <Link to={`/posts/${post.id}`}>{post.title}</Link>
             <button onClick={() => handleEditPost(post.id)}> Edit </button>
             <button onClick={() => handleDeletePost(post.id)}> Delete </button>
+            <p>Comments count: {post.comments.length}</p>
           </li>
         ))}
     </ul>

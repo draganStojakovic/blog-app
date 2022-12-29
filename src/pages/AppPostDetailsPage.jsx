@@ -32,15 +32,7 @@ export const AppPostDetailsPage = () => {
       return;
     }
     const { data } = await postService.addComment(comment, id);
-    setPost((prevState) => {
-      return {
-        ...prevState.post,
-        post: {
-          ...prevState.post.comments,
-          comments: [...prevState, data],
-        },
-      };
-    });
+    setPost((obj) => ({ ...obj, comments: [...obj.comments, data] }));
   };
 
   return (
