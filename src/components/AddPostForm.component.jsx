@@ -7,6 +7,8 @@ export const AddPostForm = ({ post, handlePost, onChange }) => {
         <input
           id="title"
           type="text"
+          required
+          minLength={2}
           value={post.title}
           onChange={(e) => onChange({ ...post, title: e.target.value })}
         />
@@ -17,6 +19,8 @@ export const AddPostForm = ({ post, handlePost, onChange }) => {
           cols="50"
           id="text"
           value={post.text}
+          required
+          maxLength={300}
           onChange={(e) => onChange({ ...post, text: e.target.value })}
         />
         <br />
