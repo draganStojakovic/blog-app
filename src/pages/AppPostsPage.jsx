@@ -20,9 +20,18 @@ export const AppPostsPage = () => {
     history.push(`/edit/${id}`);
   };
 
+  const deletePost = async (id) => {
+    await postService.delete(Number(id));
+    setPosts(posts.filter((post) => id !== post.id));
+  };
+
   return (
     <div>
-      <AppPostsList data={posts} handleEditPost={editPost} />
+      <AppPostsList
+        data={posts}
+        handleEditPost={editPost}
+        handleDeletePost={deletePost}
+      />
     </div>
   );
 };

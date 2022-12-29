@@ -13,6 +13,9 @@ class PostService extends ApiService {
   async edit(id, post) {
     await this.client.put(`/posts/${id}`, post);
   }
+  async delete(id) {
+    await this.client.delete(`/posts/${id}`);
+  }
 }
 
 export const postService = new PostService();
