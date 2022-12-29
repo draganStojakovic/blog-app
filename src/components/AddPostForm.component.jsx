@@ -22,6 +22,14 @@ export const AddPostForm = ({ post, handlePost, onChange }) => {
         <br />
         <button type="submit">Submit</button>
       </form>
+      <button
+        onClick={() =>
+          onChange({
+            title: "",
+            text: "",
+          })
+        }
+      >Reset</button>
     </div>
   );
 };
