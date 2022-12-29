@@ -5,7 +5,7 @@ class PostService extends ApiService {
     return await this.client.get("/posts");
   }
   async get(id) {
-    return await this.client.get(`/posts/${id}`);
+    return await this.client.get(`/posts/${id}?filter={"include":["comments"]}`);
   }
   async add(post) {
     await this.client.post("/posts", post);
@@ -15,6 +15,9 @@ class PostService extends ApiService {
   }
   async delete(id) {
     await this.client.delete(`/posts/${id}`);
+  }
+  async addComment(comment, postId) {
+    return await this.client.post(`/posts/${postId}/comments`, comment);
   }
 }
 

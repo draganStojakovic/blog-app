@@ -26,12 +26,10 @@ export const AppPostsPage = () => {
   };
 
   return (
-    <div>
-      <AppPostsList
-        data={posts}
-        handleEditPost={editPost}
-        handleDeletePost={deletePost}
-      />
-    </div>
+    <AppPostsList
+      data={posts}
+      handleEditPost={editPost}
+      handleDeletePost={deletePost}
+    />
   );
 };

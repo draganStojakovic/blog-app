@@ -14,7 +14,7 @@ export const EditPostPage = () => {
   const handleEditPost = async (e) => {
     e.preventDefault();
     await postService.edit(id, post);
-    history.push("/posts");
+    history.push(`/posts/${id}`);
   };
 
   const handleGetPost = async (id) => {
