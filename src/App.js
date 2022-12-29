@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 import { AppPostsPage } from "./pages/AppPostsPage";
 import { AppPostDetailsPage } from "./pages/AppPostDetailsPage";
+import { AddPostPage } from "./pages/AddPostPage";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <BrowserRouter>
         <header>
           <nav>
-            <Link to="/posts">Posts</Link>
+            <Link to="/posts"> Posts </Link>
+            <Link to="/add"> Add </Link>
             <hr />
           </nav>
         </header>
@@ -25,6 +27,9 @@ function App() {
           </Route>
           <Route path="/posts/:id">
             <AppPostDetailsPage />
+          </Route>
+          <Route path="/add">
+            <AddPostPage />
           </Route>
         </Switch>
       </BrowserRouter>
