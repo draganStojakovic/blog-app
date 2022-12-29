@@ -37,7 +37,7 @@ export const AppPostDetailsPage = () => {
 
   return (
     <div>
-      <AppPostDetailsComponent data={post} />
+      {post && <AppPostDetailsComponent data={post} />}
       <AddCommentForm
         comment={comment}
         onChange={setComment}
